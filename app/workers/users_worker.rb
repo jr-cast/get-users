@@ -5,7 +5,6 @@ class UsersWorker
     require 'net/http'
     require 'json'
 
-    p "I am working"
     url = "https://microverse-api-app.herokuapp.com/users";
     headers = { "Authorization" => "An32iK-eRu17" }
     uri = URI(url)
@@ -19,10 +18,12 @@ class UsersWorker
 
     users.each do |user|
       new_user = User.create(
+        id: user['id'],
         first_name: user['first_name'],
         last_name: user['last_name'],
         status: user['status'],
-        email: user['e mail']
+        created_at: user['created_at'],
+        email: user['email']
       )
     end
   end

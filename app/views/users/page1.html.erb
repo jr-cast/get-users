@@ -1,0 +1,29 @@
+<h1>Users (Page 1)</h1>
+
+<table>
+  <tr>
+    <th>ID number</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Status</th>
+    <th>Created at</th>
+    <th>Email</th>
+  </tr>
+
+  <% @page1.each do |user|%>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.first_name %></td>
+      <td><%= user.last_name %></td>
+      <td><%= user.status %></td>
+      <td><%= user.created_at %></td>
+      <td><%= user.email %></td>
+    </tr>
+  <% end %>
+</table>
+
+<div class="buttons">
+<%= button_to "Page 2", page2_url, :method => :get, :class => "aButton" %>
+<%= button_to "Check Active Users", active_users_url, :method => :get, :class => "aButton" %>
+<%= button_to "Check Inactive Users", active_users_url, :method => :get, :class => "aButton" %>
+</div>
