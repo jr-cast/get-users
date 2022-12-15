@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.0'
 
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 gem 'rails', '~> 5.2.3'
 gem 'pg'
 gem 'puma', '~> 3.11'
@@ -15,6 +16,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'sidekiq'
 gem 'typhoeus'
 gem 'dotenv'
+gem 'open-uri'
+gem 'redis'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
